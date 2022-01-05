@@ -56,10 +56,15 @@ dependencies:
   # package that allows to compare objects
   equatable: ^2.0.3
 
+  
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  # package that allows to generate files using Dart code
+  build_runner: ^2.1.7
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
