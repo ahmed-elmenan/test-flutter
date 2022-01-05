@@ -56,8 +56,6 @@ dependencies:
   # package that allows to compare objects
   equatable: ^2.0.3
 
-  
-
 
 dev_dependencies:
   flutter_test:
