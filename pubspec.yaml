@@ -53,6 +53,9 @@ dependencies:
   # Service Locator for Dart and Flutter projects
   get_it: ^7.1.3
 
+  # package that allows to compare objects
+  equatable: ^2.0.3
+
 
 dev_dependencies:
   flutter_test:
