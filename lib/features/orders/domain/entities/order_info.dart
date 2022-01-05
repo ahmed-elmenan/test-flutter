@@ -1,6 +1,8 @@
+import 'package:equatable/equatable.dart';
+
 import 'order_item.dart';
 
-class OrderInfo {
+class OrderInfo extends Equatable{
   final String object;
   final int id;
   final String table;
@@ -15,4 +17,7 @@ class OrderInfo {
       required this.table,
       required this.guests,
       required this.date});
+
+  @override
+  List<Object?> get props => [items, object, id, table, guests, date];
 }
