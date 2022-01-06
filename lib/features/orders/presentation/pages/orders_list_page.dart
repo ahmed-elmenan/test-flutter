@@ -8,15 +8,13 @@ import 'package:pep/features/orders/presentation/widgets/orders_bloc_builder.dar
 import 'package:pep/injection_container.dart';
 
 class OrdersListPage extends StatelessWidget {
-  
   @override
   Widget build(BuildContext context) {
-    return 
-         BlocProvider(
-          create: (_) => serviceLocator<OrdersBloc>(),
-          child: Container(child: Center(
-            child: OrdersBlocBuilder()
-          )),
-        );
+    return BlocProvider(
+      create: (_) => serviceLocator<OrdersBloc>(),
+      child: Scaffold(
+        body: OrdersBlocBuilder(),
+      ),
+    );
   }
 }

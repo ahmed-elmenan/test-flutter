@@ -40,7 +40,6 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
 
       yield* ordersEither.fold((failure) async* {
         yield ErrorState(message: ErrorUtils.mapFailureToMessage(failure));
-        yield  LoadingState();
       }, (orders) async* {
         yield LoadedState(orders: orders);
       });

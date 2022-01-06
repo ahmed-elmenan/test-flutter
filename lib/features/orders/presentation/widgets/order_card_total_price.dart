@@ -36,7 +36,10 @@ class _TotalPriceState extends State<TotalPrice> {
             style: TextStyle(color: GlobalTheme.cardPrimaryColor)),
         TextSpan(
           text: ",${totalPrice[1]} $currency",
-          style: TextStyle(color: GlobalTheme.cardSecondaryColor),
+          style: TextStyle(
+            color: GlobalTheme.cardSecondaryColor,
+            fontWeight: FontWeight.normal,
+          ),
         ),
       ],
     ));

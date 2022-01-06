@@ -14,7 +14,6 @@ class OrdersBlocBuilder extends StatefulWidget {
 }
 
 class _OrdersBlocBuilderState extends State<OrdersBlocBuilder> {
-  
   _dispatchOrdersEvent() {
     BlocProvider.of<OrdersBloc>(context).add(GetOrdersEvent());
   }
@@ -36,7 +35,6 @@ class _OrdersBlocBuilderState extends State<OrdersBlocBuilder> {
         } else if (state is ErrorState) {
           return MessageDisplay(message: state.message);
         } else if (state is LoadedState) {
-          // return MessageDisplay(message: state.orders.object);
           return OrdersListBuilder();
         }
         return SizedBox();
