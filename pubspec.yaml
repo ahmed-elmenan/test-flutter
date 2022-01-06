@@ -59,6 +59,9 @@ dependencies:
   # a logger that prints beautiful logs
   logger: ^1.1.0
 
+  # package for Icon pack
+  font_awesome_flutter: ^9.2.0
+
 
 dev_dependencies:
   flutter_test:
@@ -102,10 +105,10 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Nunito
+    - family: futur
       fonts:
-        - asset: assets/fonts/Nunito-VariableFont_wght.ttf
-          weight: 500
+        - asset: assets/fonts/futur.ttf
+        - asset: assets/fonts/futura-medium-bt.ttf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:

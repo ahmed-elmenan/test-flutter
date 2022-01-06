@@ -9,7 +9,7 @@ class OrdersAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-        backgroundColor: GlobalTheme.appBarBackgroundColor,
+        backgroundColor: GlobalTheme.secondaryBackgroundColor,
         elevation: 0,
         title: Center(
             child: Text(

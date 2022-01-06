@@ -7,6 +7,8 @@ import 'package:pep/features/orders/presentation/bloc/orders_bloc.dart';
 import 'package:pep/features/orders/presentation/widgets/orders_app_bar.dart';
 import 'package:pep/injection_container.dart';
 
+import 'order_card.dart';
+
 class OrdersListBuilder extends StatefulWidget {
   const OrdersListBuilder({Key? key}) : super(key: key);
 
@@ -36,7 +38,7 @@ class _OrdersListBuilderState extends State<OrdersListBuilder> {
       body: ListView.builder(
           itemCount: ordersLen,
           itemBuilder: (context, index) {
-            return (Text(_orders!.orders[index].table));
+            return (OrderCard());
           }),
     );
   }
