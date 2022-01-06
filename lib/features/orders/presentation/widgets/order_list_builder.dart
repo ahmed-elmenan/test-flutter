@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pep/core/theme/global_style.dart';
+import 'package:pep/core/theme/global_theme.dart';
 import 'package:pep/features/orders/domain/entities/orders.dart';
 import 'package:pep/features/orders/presentation/bloc/orders_bloc.dart';
+import 'package:pep/features/orders/presentation/widgets/orders_app_bar.dart';
 import 'package:pep/injection_container.dart';
 
 class OrdersListBuilder extends StatefulWidget {
@@ -24,9 +27,14 @@ class _OrdersListBuilderState extends State<OrdersListBuilder> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: ListView.builder(
-          itemCount: _orders!.orders.length,
+    int ordersLen = _orders!.orders.length;
+    return Scaffold(
+      backgroundColor: GlobalTheme.backgroundColor,
+      appBar: PreferredSize(
+          preferredSize: Size.fromHeight(60.0),
+          child: OrdersAppBar(titleText: ordersLen.toString() + " commandes")),
+      body: ListView.builder(
+          itemCount: ordersLen,
           itemBuilder: (context, index) {
             return (Text(_orders!.orders[index].table));
           }),

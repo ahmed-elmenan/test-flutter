@@ -11,13 +11,12 @@ class OrdersListPage extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: GlobalTheme.backgroundColor,
-        body: BlocProvider(
+    return 
+         BlocProvider(
           create: (_) => serviceLocator<OrdersBloc>(),
           child: Container(child: Center(
             child: OrdersBlocBuilder()
           )),
-        ));
+        );
   }
 }

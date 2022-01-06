@@ -1,5 +1,6 @@
 import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:get_it/get_it.dart';
+import 'package:logger/logger.dart';
 import 'package:pep/features/orders/data/datasources/orders_remote_data_source.dart';
 import 'package:pep/features/orders/data/repositories/order_repository_impl.dart';
 import 'package:pep/features/orders/domain/usecases/get_orders.dart';
@@ -22,7 +23,9 @@ Future<void> init() async {
   //! Features - Orders
 
   //Bloc
-  serviceLocator.registerFactory(() => OrdersBloc(getOrders: serviceLocator()));
+  serviceLocator.registerFactory(() => OrdersBloc(
+    logger: serviceLocator(),
+    getOrders: serviceLocator()));
 
   // Use Cases
   serviceLocator
@@ -41,5 +44,6 @@ Future<void> init() async {
 
  serviceLocator.registerLazySingleton(() => http.Client());
  serviceLocator.registerLazySingleton(() => DataConnectionChecker());
+ serviceLocator.registerLazySingleton(() => Logger());
 
 }
