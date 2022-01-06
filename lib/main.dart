@@ -1,41 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:pep/features/orders/presentation/pages/orders_list_page.dart';
+import 'injection_container.dart' as dependency_injection;
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        
-      ),
-      home: const MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
-
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
- 
-
-  @override
-  Widget build(BuildContext context) {
-    
-    return Scaffold(
-    body: Container(
-
-    ),
-    );
-  }
+void main() async {
+  
+  await dependency_injection.init();
+  
+  runApp(
+     MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: OrdersListPage(),
+    )
+  );
 }
