@@ -35,11 +35,14 @@ class _OrdersListBuilderState extends State<OrdersListBuilder> {
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(60.0),
           child: OrdersAppBar(titleText: ordersLen.toString() + " commandes")),
-      body: ListView.builder(
-          itemCount: ordersLen,
-          itemBuilder: (context, index) {
-            return (OrderCard());
-          }),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 8.0),
+        child: ListView.builder(
+            itemCount: ordersLen,
+            itemBuilder: (context, index) {
+              return (OrderCard(orderInfo: _orders!.orders[index]));
+            }),
+      ),
     );
   }
 }

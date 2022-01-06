@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pep/core/theme/global_style.dart';
 import 'package:pep/core/theme/global_theme.dart';
+import 'package:pep/features/orders/domain/entities/order_info.dart';
 import 'package:pep/features/orders/presentation/widgets/orders_card_guests_and_date.dart';
 
 import 'card_table.dart';
 import 'order_card_total_price.dart';
 
 class OrderCard extends StatelessWidget {
-  const OrderCard({Key? key}) : super(key: key);
+  final OrderInfo orderInfo;
+  const OrderCard({Key? key, required this.orderInfo}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,12 +22,14 @@ class OrderCard extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Expanded(flex: 1, child: TableCard()),
+          TableCard(table: orderInfo.table),
           Expanded(
-            flex: 2,
-            child: OrdersCardGuestsAndDate()
-          ),
-         TotalPrice()
+              flex: 2,
+              child: OrdersCardGuestsAndDate(
+                guests: orderInfo.guests,
+                date: orderInfo.date.isNotEmpty ? orderInfo.date : "18:00",
+              )),
+          TotalPrice(orderItems: orderInfo.items)
         ],
       ),
     );
