@@ -4,6 +4,8 @@ import 'package:pep/core/widgets/loading_widget.dart';
 import 'package:pep/core/widgets/message_display.dart';
 import 'package:pep/features/orders/presentation/bloc/orders_bloc.dart';
 
+import 'order_list_builder.dart';
+
 class OrdersBlocBuilder extends StatefulWidget {
   const OrdersBlocBuilder({Key? key}) : super(key: key);
 
@@ -34,7 +36,8 @@ class _OrdersBlocBuilderState extends State<OrdersBlocBuilder> {
         } else if (state is ErrorState) {
           return MessageDisplay(message: state.message);
         } else if (state is LoadedState) {
-          return MessageDisplay(message: state.orders.object);
+          // return MessageDisplay(message: state.orders.object);
+          return OrdersListBuilder();
         }
         return SizedBox();
       },

@@ -20,7 +20,8 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
       final ordersEither = await getOrders.getOrders();
 
       yield* ordersEither.fold((failure) async* {
-        yield ErrorState(message: ErrorUtils.mapFailureToMessage(failure));
+        // yield ErrorState(message: ErrorUtils.mapFailureToMessage(failure));
+        yield  LoadingState();
       }, (orders) async* {
         yield LoadedState(orders: orders);
       });
