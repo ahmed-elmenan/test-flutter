@@ -5,7 +5,14 @@ import 'package:pep/features/orders/data/models/order_item_model.dart';
 
 class TotalPrice extends StatefulWidget {
   final List<OrderItemModel> orderItems;
-  const TotalPrice({Key? key, required this.orderItems}) : super(key: key);
+  final Color primaryColor;
+  final Color secondaryColor;
+  const TotalPrice(
+      {Key? key,
+      required this.orderItems,
+      required this.primaryColor,
+      required this.secondaryColor})
+      : super(key: key);
 
   @override
   State<TotalPrice> createState() => _TotalPriceState();
@@ -17,7 +24,6 @@ class _TotalPriceState extends State<TotalPrice> {
 
   @override
   void initState() {
-    // TODO: implement initState
     totalPrice = orderItemsPriceAddition(widget.orderItems);
     currency = widget.orderItems[0].currency;
     super.initState();
@@ -32,12 +38,11 @@ class _TotalPriceState extends State<TotalPrice> {
       ),
       children: [
         TextSpan(
-            text: totalPrice[0],
-            style: TextStyle(color: GlobalTheme.cardPrimaryColor)),
+            text: totalPrice[0], style: TextStyle(color: widget.primaryColor)),
         TextSpan(
           text: ",${totalPrice[1]} $currency",
           style: TextStyle(
-            color: GlobalTheme.cardSecondaryColor,
+            color: widget.secondaryColor,
             fontWeight: FontWeight.normal,
           ),
         ),

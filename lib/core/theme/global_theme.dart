@@ -8,5 +8,6 @@ class GlobalTheme {
   static Color tableCardColor = const Color(0xffea6265);
   static Color cardSecondaryColor = const Color(0xffc5d1d7);
   static Color cardPrimaryColor = const Color(0xff5b6479);
+  static Color lightGreyColor = const Color(0xffeff1f3);
 
 }

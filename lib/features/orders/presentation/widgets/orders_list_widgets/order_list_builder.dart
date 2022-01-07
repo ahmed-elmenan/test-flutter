@@ -4,10 +4,10 @@ import 'package:pep/core/theme/global_style.dart';
 import 'package:pep/core/theme/global_theme.dart';
 import 'package:pep/features/orders/domain/entities/orders.dart';
 import 'package:pep/features/orders/presentation/bloc/orders_bloc.dart';
-import 'package:pep/features/orders/presentation/widgets/orders_app_bar.dart';
 import 'package:pep/injection_container.dart';
 
 import 'order_card.dart';
+import '../../../../../core/widgets/orders_app_bar.dart';
 
 class OrdersListBuilder extends StatefulWidget {
   const OrdersListBuilder({Key? key}) : super(key: key);
@@ -34,7 +34,10 @@ class _OrdersListBuilderState extends State<OrdersListBuilder> {
       backgroundColor: GlobalTheme.backgroundColor,
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(60.0),
-          child: OrdersAppBar(titleText: ordersLen.toString() + " commandes")),
+          child: OrdersAppBar(
+            titleText: ordersLen.toString() + " commandes",
+            isBackButton: false,
+          )),
       body: Padding(
         padding: const EdgeInsets.only(top: 8.0),
         child: ListView.builder(
