@@ -1,9 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:pep/features/orders/data/models/order_item_model.dart';
 
-import 'order_item.dart';
-
-class OrderInfo extends Equatable{
+class OrderInfo extends Equatable {
   final String object;
   final int id;
   final String table;

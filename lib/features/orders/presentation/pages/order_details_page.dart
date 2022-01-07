@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pep/core/theme/global_theme.dart';
 import 'package:pep/core/widgets/message_display.dart';
 import 'package:pep/core/widgets/orders_app_bar.dart';
 import 'package:pep/core/widgets/total_price.dart';
 import 'package:pep/core/widgets/vertical_separator.dart';
 import 'package:pep/features/orders/domain/entities/order_info.dart';
-import 'package:pep/features/orders/presentation/bloc/orders_bloc.dart';
 import 'package:pep/features/orders/presentation/widgets/order_details_widgets/items_list.dart';
 import 'package:pep/features/orders/presentation/widgets/order_details_widgets/tab_title.dart';
 
@@ -25,7 +23,6 @@ class _OrderDetailsPageState extends State<OrderDetailsPage>
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     tabController = TabController(
       initialIndex: 1,
@@ -38,10 +35,9 @@ class _OrderDetailsPageState extends State<OrderDetailsPage>
     });
   }
 
-/*
- * the function below handle the tabBar titles' color states
- * for disabling and enabling purposes  
- */
+  ///the function below handle the tabBar titles' color states
+  /// for disabling and enabling purposes
+  ///
   _handleTabBarTitleColorState() {
     setState(() {
       if (tabController.index == 1) {

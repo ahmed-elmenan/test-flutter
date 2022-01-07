@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pep/core/theme/global_style.dart';
-import 'package:string_to_hex/string_to_hex.dart';
 
 class ItemCardText extends StatelessWidget {
   final String color;

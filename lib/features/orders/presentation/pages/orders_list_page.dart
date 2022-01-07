@@ -5,6 +5,8 @@ import 'package:pep/features/orders/presentation/widgets/orders_list_widgets/ord
 import 'package:pep/injection_container.dart';
 
 class OrdersListPage extends StatelessWidget {
+  const OrdersListPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(

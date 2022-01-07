@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:pep/core/theme/global_style.dart';
 import 'package:pep/core/theme/global_theme.dart';
 import 'package:pep/features/orders/domain/entities/order_item.dart';
-import 'package:string_to_hex/string_to_hex.dart';
 
 import 'item_card_text.dart';
 
-class itemInfoCard extends StatelessWidget {
+class ItemInfoCard extends StatelessWidget {
   final OrderItem orderItem;
-  const itemInfoCard({Key? key, required this.orderItem}) : super(key: key);
+  const ItemInfoCard({Key? key, required this.orderItem}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -21,7 +19,10 @@ class itemInfoCard extends StatelessWidget {
             height: 30,
             width: 35,
             color: Color(GlobalTheme.convertStringHexToColor(orderItem.color)),
-            child: Center(child: Text("1")),
+            child: Center(
+                child: Text("1", // I didn't find the item quantites in the end-points data so I give it 1
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold))),
           ),
           ItemCardText(
             text: orderItem.name,

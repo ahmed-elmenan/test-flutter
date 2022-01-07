@@ -1,4 +1,3 @@
-import 'package:equatable/equatable.dart';
 import 'package:pep/features/orders/domain/entities/order_item.dart';
 import 'package:json_annotation/json_annotation.dart';
 

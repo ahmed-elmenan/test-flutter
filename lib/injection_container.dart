@@ -10,10 +10,13 @@ import 'package:http/http.dart' as http;
 import 'core/network/network_info.dart';
 import 'features/orders/domain/repositories/order_repository.dart';
 
+/// using Get_it to apply the Service Locator design pattern
+/// to register all the needed classes using som other patterns that is
+/// Factory, Singeleton, LazySingeleton and inject their dependencies
+
 final serviceLocator = GetIt.instance;
 
 Future<void> init() async {
-
   //! Features - Core
 
   // NetworkInfo
@@ -23,9 +26,8 @@ Future<void> init() async {
   //! Features - Orders
 
   //Bloc
-  serviceLocator.registerFactory(() => OrdersBloc(
-    logger: serviceLocator(),
-    getOrders: serviceLocator()));
+  serviceLocator.registerFactory(
+      () => OrdersBloc(logger: serviceLocator(), getOrders: serviceLocator()));
 
   // Use Cases
   serviceLocator
@@ -42,8 +44,7 @@ Future<void> init() async {
 
   //! External
 
- serviceLocator.registerLazySingleton(() => http.Client());
- serviceLocator.registerLazySingleton(() => DataConnectionChecker());
- serviceLocator.registerLazySingleton(() => Logger());
-
+  serviceLocator.registerLazySingleton(() => http.Client());
+  serviceLocator.registerLazySingleton(() => DataConnectionChecker());
+  serviceLocator.registerLazySingleton(() => Logger());
 }

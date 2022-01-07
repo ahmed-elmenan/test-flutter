@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pep/core/theme/global_style.dart';
 import 'package:pep/core/theme/global_theme.dart';
 import 'package:pep/features/orders/domain/entities/orders.dart';
 import 'package:pep/features/orders/presentation/bloc/orders_bloc.dart';
-import 'package:pep/injection_container.dart';
 
 import 'order_card.dart';
 import '../../../../../core/widgets/orders_app_bar.dart';

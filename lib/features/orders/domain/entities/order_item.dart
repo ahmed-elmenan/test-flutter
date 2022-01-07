@@ -8,7 +8,7 @@ class OrderItem extends Equatable {
   final String currency;
   final String color;
 
-  OrderItem(
+  const OrderItem(
       {required this.object,
       required this.id,
       required this.name,
