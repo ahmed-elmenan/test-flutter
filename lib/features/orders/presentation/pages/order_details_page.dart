@@ -5,6 +5,7 @@ import 'package:pep/core/widgets/total_price.dart';
 import 'package:pep/core/widgets/vertical_separator.dart';
 import 'package:pep/features/orders/domain/entities/order_info.dart';
 import 'package:pep/features/orders/presentation/bloc/orders_bloc.dart';
+import 'package:pep/features/orders/presentation/widgets/order_details_widgets/items_list.dart';
 import 'package:pep/features/orders/presentation/widgets/order_details_widgets/tab_title.dart';
 
 class OrderDetailsPage extends StatefulWidget {
@@ -45,7 +46,10 @@ class _OrderDetailsPageState extends State<OrderDetailsPage>
       if (tabController.index == 1) {
         _assignColor(Colors.blue, Colors.grey);
       } else {
-        _assignColor(Colors.grey, Colors.blue,);
+        _assignColor(
+          Colors.grey,
+          Colors.blue,
+        );
       }
     });
   }
@@ -79,6 +83,7 @@ class _OrderDetailsPageState extends State<OrderDetailsPage>
                   child: VerticalSeparator()),
               TabBar(
                 controller: tabController,
+                indicatorWeight: 5,
                 tabs: [
                   TabTitle(
                       text: Text(
@@ -103,7 +108,10 @@ class _OrderDetailsPageState extends State<OrderDetailsPage>
             height: 100,
             child: TabBarView(
               controller: tabController,
-              children: [Text("test3"), Text("test4")],
+              children: [
+                Text("test3"),
+                ItemsList(orderItemsList: widget.orderInfo.items)
+              ],
             ),
           ),
         ],
