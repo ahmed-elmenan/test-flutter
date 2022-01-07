@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pep/core/theme/global_theme.dart';
-import 'package:pep/core/utils/order_items_price_addition.dart';
+import 'package:pep/core/util/order_items_price_addition.dart';
 import 'package:pep/features/orders/data/models/order_item_model.dart';
 
 class TotalPrice extends StatefulWidget {
@@ -34,7 +34,7 @@ class _TotalPriceState extends State<TotalPrice> {
     return Text.rich(TextSpan(
       style: TextStyle(
         fontWeight: FontWeight.bold,
-        fontSize: 30,
+        fontSize: 26,
       ),
       children: [
         TextSpan(

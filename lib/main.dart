@@ -9,7 +9,7 @@ void main() async {
 
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    theme: ThemeData(fontFamily: 'futur'),
+    theme: ThemeData(fontFamily: 'Poppins'),
     home: OrdersListPage(),
   ));
 }

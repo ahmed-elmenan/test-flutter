@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pep/core/theme/global_style.dart';
 import 'package:pep/core/theme/global_theme.dart';
 
 class OrdersCardGuestsAndDate extends StatelessWidget {
@@ -25,10 +26,10 @@ class OrdersCardGuestsAndDate extends StatelessWidget {
                 width: 5,
               ),
               Text(guests.toString(),
-                  style: TextStyle(color: GlobalTheme.cardPrimaryColor)),
+                  style: GlobalStyle.orderCardGuestsandDateStyle),
             ],
           ),
-          Text(date)
+          Text(date, style: GlobalStyle.orderCardGuestsandDateStyle)
         ],
       ),
     );

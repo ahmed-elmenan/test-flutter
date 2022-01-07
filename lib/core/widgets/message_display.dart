@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pep/core/theme/global_theme.dart';
 
 class MessageDisplay extends StatelessWidget {
   final String message;
@@ -12,12 +13,11 @@ class MessageDisplay extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-          child: Text(
-            message,
-            style: TextStyle(fontSize: 25),
-            textAlign: TextAlign.center,
-          ),
-        
+        child: Text(
+          message,
+          style: TextStyle(fontSize: 25, color: GlobalTheme.cardPrimaryColor),
+          textAlign: TextAlign.center,
+        ),
       ),
     );
   }

@@ -27,9 +27,12 @@ class OrdersAppBar extends StatelessWidget {
        */
       leading: isBackButton
           ? Center(
-              child: FaIcon(
-                FontAwesomeIcons.chevronLeft,
-                color: GlobalTheme.cardPrimaryColor,
+              child: IconButton(
+                onPressed: () => Navigator.of(context).pop(),
+                icon: FaIcon(
+                  FontAwesomeIcons.chevronLeft,
+                  color: GlobalTheme.cardPrimaryColor,
+                ),
               ),
             )
           : SizedBox(),

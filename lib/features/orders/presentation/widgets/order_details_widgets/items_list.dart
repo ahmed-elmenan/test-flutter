@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pep/features/orders/domain/entities/order_info.dart';
 import 'package:pep/features/orders/domain/entities/order_item.dart';
+import 'package:pep/features/orders/presentation/widgets/order_details_widgets/item_info_card.dart';
 
 class ItemsList extends StatelessWidget {
   final List<OrderItem> orderItemsList;
@@ -12,7 +13,7 @@ class ItemsList extends StatelessWidget {
       child: ListView.builder(
           itemCount: orderItemsList.length,
           itemBuilder: (context, index) {
-            return Text(orderItemsList[index].name);
+            return itemInfoCard(orderItem: orderItemsList[index]);
           }),
     );
   }

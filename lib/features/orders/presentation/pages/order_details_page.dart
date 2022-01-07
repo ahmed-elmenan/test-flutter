@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pep/core/theme/global_theme.dart';
+import 'package:pep/core/widgets/message_display.dart';
 import 'package:pep/core/widgets/orders_app_bar.dart';
 import 'package:pep/core/widgets/total_price.dart';
 import 'package:pep/core/widgets/vertical_separator.dart';
@@ -91,7 +92,7 @@ class _OrderDetailsPageState extends State<OrderDetailsPage>
                     style: TextStyle(
                       color: totalProductEnabledColor,
                       fontWeight: FontWeight.bold,
-                      fontSize: 30,
+                      fontSize: 26,
                     ),
                   )),
                   TabTitle(
@@ -104,12 +105,11 @@ class _OrderDetailsPageState extends State<OrderDetailsPage>
               ),
             ],
           ),
-          Container(
-            height: 100,
+          Flexible(
             child: TabBarView(
               controller: tabController,
               children: [
-                Text("test3"),
+                MessageDisplay(message: "Empty Tab"),
                 ItemsList(orderItemsList: widget.orderInfo.items)
               ],
             ),

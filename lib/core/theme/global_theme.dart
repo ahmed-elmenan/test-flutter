@@ -10,4 +10,6 @@ class GlobalTheme {
   static Color cardPrimaryColor = const Color(0xff5b6479);
   static Color lightGreyColor = const Color(0xffeff1f3);
 
+  static int convertStringHexToColor(String color) =>
+    int.parse("0xff" + color.substring(1));
 }
