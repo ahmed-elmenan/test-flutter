@@ -14,7 +14,7 @@ class OrdersAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: GlobalTheme.secondaryBackgroundColor,
-      elevation: 0,
+      elevation: 0, // to remove the appBar shaddow
       actions: const [
         SizedBox(
           width: 50,
